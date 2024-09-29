@@ -11,11 +11,9 @@ def get_gpt_response(user_input):
         model="gpt-3.5-turbo",  # Use the correct model
         messages=[{"role": "user", "content": user_input}],
         max_tokens=100,
-        n=1,
-        stop=None,
         temperature=0.7
     )
-    return response['choices'][0]['message']['content'].strip()
+    return response.choices[0].message.content.strip()
 
 # Streamlit App Layout
 st.title("Skin Cancer Detection Chatbot")
