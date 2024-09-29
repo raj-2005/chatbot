@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[6]:
-
-
-pip install --upgrade openai
-
-
-# In[7]:
-
-
 import os
 import openai
 import streamlit as st
@@ -17,10 +5,10 @@ import streamlit as st
 # Fetch the OpenAI API key from environment variables
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-# Function to get response from OpenAI GPT model using the new API
+# Function to get response from OpenAI GPT model
 def get_gpt_response(user_input):
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # You can use other models too, e.g., gpt-4
+        model="gpt-3.5-turbo",  # Use the correct model
         messages=[{"role": "user", "content": user_input}],
         max_tokens=100,
         n=1,
@@ -46,10 +34,6 @@ if st.button("Submit"):
     else:
         st.error("Please enter a question!")
 
-
-
-
-# In[ ]:
 
 
 
